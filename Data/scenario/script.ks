@@ -2,17 +2,17 @@
 @val
 @bg storage=black time=1000
 
-¡¡This morning, I got a phonecall from my friend.
+    This morning, I got a phonecall from my friend.
 @lr
 @r
-  ¡¸Hey buddy! Do you want to get a well paid job? ¡¹
+    "Hey buddy! Would you be interested in a well paid job? "
 @lr
-¡¡ He asked. 
+    He asked. 
 @lr
 @r
-¡¡I admit that I am short on money right now.
+    I admit that I am short on money right now.
 @lr
-¡¡Little did I know, a breathtaking adventure was waiting for me...
+    Little did I know, a breathtaking adventure was waiting for me...
 
 @p
 
@@ -21,29 +21,31 @@
 @bg storage=house layer =base time=1000
 @advl
 @fg layer=0 storage=Marina t=0 l=200 time=250
-¡¡¡¸Hello, my name is Marina Hill. I am the landlord of the Corbitt estate.¡¹
+    "Hello, my name is Marina Hill. I am the landlord of the Corbitt estate."
 @p
-¡¡She is my friend¡¯s cousin, the client in this case. Now, we are in front 
+    She is my friend's cousin, the client in this case. Now, we are in front 
 @r
 of an old house, in central Boston. 
 @p
-¡¡¡¸There was recently an incident at the house and now people around the estate are starting to claim it is haunted.¡¹
-@p
-¡¡¡¸When I told my cousin about the events he strongly recommended 
+    "There was recently an incident at the house and now people around 
 @r
-you. He told me that you are a very skilled investigator with an interest in the occult. ¡¹
+the estate are starting to claim it is haunted."
 @p
-¡¡¡¸Will you please come to the estate to conduct an investigation?¡¹
-@p
-¡¡¡¸I will pay you $50 cash in advance, as well as a daily wage of $20 
+    "When I told my cousin about the events he strongly recommended 
 @r
-and a $100 bonus if you can give the property a clean bill of health.¡¹
+you. He told me that you are a very skilled investigator with an interest in the occult. "
 @p
-¡¡¡¸It¡¯s important that I be able to rent the property out again without 
+    "Will you please come to the estate to conduct an investigation?"
+@p
+    "I will pay you $50 cash in advance, as well as a daily wage of $20 
 @r
-worry of another incident happening!¡¹
+and a $100 bonus if you can give the property a clean bill of health."
 @p
-   It sounds good. What should you do?
+    "Itâ€™s important that I be able to rent the property out again without 
+@r
+worry of another incident happening!"
+@p
+    It sounds good. What should you do?
 @p
     
 [wait time=200]
@@ -57,22 +59,22 @@ worry of another incident happening!¡¹
    
 *decline
 @cm
-¡¡¡¸Please, do not say that! I really need your help!¡¹
+    "Please, do not say that! I really need your help!"
 @l
 @jump target = *start
 @s  
    
 *accept
 @cm
-¡¡¡¸Wonderful! Here is the keys to the house as well as the $50 cash. 
+    "Wonderful! Here is the keys to the house as well as the $50 cash. 
 @r
 Thank you so much for your help!
-¡¹
+"
 @p
-¡¸You can go to visit the Macario family at first. They are the last tenants for this house. Here is the address.
-¡¹
+    "You can go to visit the Macario family at first. They are the last tenants for this house. Here is the address.
+"
 @p
-¡¸Well,Good luck!¡¹
+    "Well,Good luck!"
 @fadeoutbgm time=5000
 
 [eval exp="f.hor=0"]
@@ -104,7 +106,7 @@ Where do you want to go?
 [link target=*TheChapelofContemplation]The Chapel of Contemplation[endlink][r]
 [endif]
 [r]
-[link storage="corbitt'sHouse.ks" target=*corbitt'sHouse]Corbitt¡¯s House[endlink][r]
+[link storage="corbitt'sHouse.ks" target=*corbitt'sHouse]Corbittâ€™s House[endlink][r]
 [s]
 
 *TheMacarioFamily
@@ -125,7 +127,7 @@ Where do you want to go?
 @val
    I go to the front desk to mention what I had come for.
 @lr   
-   The nurse tell me the rooms¡¯ number for Macario couple.
+   The nurse tell me the roomsâ€™ number for Macario couple.
 @lr
 @r
 *frontDesk
@@ -166,13 +168,13 @@ the room.
 
 *LookAroundTheRoom
 @p
-You look around the room but it looks like any other patient¡¯s room in the asylum.
+You look around the room but it looks like any other patientâ€™s room in the asylum.
 @lr
 @jump target=*sickroom1
 
 *IntroduceYourself
 @advl
-   ¡¸Hello Vittorio, I am an investigator currently investigating the Corbitt house where you used to live.¡¹
+   "Hello Mr. Macario, I am an investigator currently investigating the Corbitt house where you used to live."
 @p
     Vittorio: *mumbles*
 @p
@@ -193,17 +195,17 @@ Next..
 
 *qV1
 @advl
-   ¡¸Can you tell me about the accident you had?¡¹
+   "Can you tell me about the accident you had?"
 @p
-    Vittorio: ¡­
+    Vittorio: â€¦
 [eval exp="f.qV1=1"]
 @jump target=*qVittorio
 
 *qV2
 @advl
-   ¡¸What happened during the time after the accident?¡¹
+   "What happened during the time after the accident?"
 @p
-    Vittorio: *mumbles*...burning¡­..man¡­*mumbles*
+    Vittorio: *mumbles*...burningâ€¦..manâ€¦*mumbles*
 [eval exp="f.qV2=1"]
 @jump target=*qVittorio
 
@@ -244,16 +246,16 @@ Next..
 @p
     You look around the room but it looks like any other
 @r
-patient¡¯s room in the asylum. A picture of her family rests on the table next to her bed.
+patientâ€™s room in the asylum. A picture of her family rests on the table next to her bed.
 
 @lr
 @jump target=*sickroom2
 
 *IntroduceYourself2
 @advl
-   ¡¸Hello Gabriela, I am an investigator currently investigating the Corbitt house where you used to live.¡¹
+   "Hello Mrs. Macario, I am an investigator currently investigating the Corbitt house where you used to live."
 @p
-    Gabriela:¡¸I-it is nice... to meet you.¡¹
+    Gabriela:"I-it is nice... to meet you."
 @p
 @val
 Next..
@@ -265,44 +267,44 @@ Next..
 *qGabriela
 @p
 @val
-[link target=*qG1]Can you tell me about your husband¡¯s accident?[endlink][r]
+[link target=*qG1]Can you tell me about your husbandâ€™s accident?[endlink][r]
 [link target=*qG2]What happened during the time after the accident?[endlink][r]
 [link target=*qG3]What happened after your husband was committed?[endlink][r]
-[link target=*sickroom1]Leave[endlink][r]
+[link target=*sickroom2]Leave[endlink][r]
 [s]
 
 *qG1
 @advl
-   ¡¸Can you tell me about your husband¡¯s accident?¡¹
+   "Can you tell me about your husbandâ€™s accident?"
 @p
-    Gabriela:¡¸It was because of tha-that presence.That thing¡­¡¹
+    Gabriela:"It was because of tha-that presence.That thingâ€¦"
 @p
-	Gabriela:¡¸t-that thing is evil¡­. evil. B-burning¡­the burning eyes.¡¹
+	Gabriela:"t-that thing is evilâ€¦. evil. B-burningâ€¦the burning eyes."
 @p
-	Gabriela:¡¸It was angry¡­ so angry. ¡¹
+	Gabriela:"It was angryâ€¦ so angry. "
 [eval exp="f.qG1=1"]
 @jump target=*qGabriela
 
 *qG2
 @advl
-   ¡¸What happened during the time after the accident?¡¹
+   "What happened during the time after the accident?"
 @p
-    Gabriela:¡¸I-it was angry¡­ s-so angry. Poor Vittorio¡­ my dear Vittorio... i-it¡­ it hated him s-so much.¡¹
+    Gabriela:"I-it was angryâ€¦ s-so angry. Poor Vittorioâ€¦ my dear Vittorio... i-itâ€¦ it hated him s-so much."
 [eval exp="f.qG2=1"]
 @jump target=*qGabriela
 
 *qG3
 @advl
-   ¡¸What happened after your husband was committed?¡¹
+   "What happened after your husband was committed?"
 @p
-    Gabriela: ¡¸¡­th-the burning eyes¡­watching me¡­. w-watching¡­. eyes¡­¡¹
+    Gabriela: "â€¦th-the burning eyesâ€¦watching meâ€¦. w-watchingâ€¦. eyesâ€¦"
 [eval exp="f.qG3=1"]
 @jump target=*qGabriela
 
-*endVittorio
+*endGabriela
 @p
 @val
-    You see Gabriela is distressed. You think it¡¯s best not to push her any further and decide to leave.
+    You see Gabriela is distressed. You think itâ€™s best not to push her any further and decide to leave.
 @lr
 @jump target=*frontDesk
 
@@ -332,4 +334,3 @@ Next..
 *TheChapelofContemplation
 
 @jump target=*move
-
