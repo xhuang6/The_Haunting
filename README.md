@@ -9,6 +9,6 @@ update the Prologue and Roxbury Sanitarium part
 
 July 21 2015
 --------------------------------------------------
-update all of the parts except "The Cobbit's House"
+update all of the parts except "The Corbbit's House"
 
 
