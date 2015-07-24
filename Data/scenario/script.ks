@@ -13,6 +13,7 @@
 @r
     I admit that I am short on money right now.
 @lr
+@r
     Little did I know, a breathtaking adventure was waiting for me...
 
 @p
@@ -77,7 +78,7 @@ Thank you so much for your help!
 	of this house. Here is the address.
 "
 @p
-    "Well,Good luck!"
+    "Well, Good luck!"
 @fadeoutbgm time=5000
 
 
@@ -136,14 +137,14 @@ Boston.
 @val
     You go to the front desk and ask to see the Mr. and Mrs.
 @r
-Macario. The nurse tells me their room numbers.
+Macario. The nurse tells you their room numbers.
 @lr
 @r
 *frontDesk
    Where do you want to go?
 @lr
 [link target=*Vittorio]Visit Mr. Macario[endlink][r]
-[link target=*Gabriela]Visit Ms. Macario[endlink][r]
+[link target=*Gabriela]Visit Mrs. Macario[endlink][r]
 [if exp="f.Vittorio==1"&&exp="f.Gabriela==1"]
 [link target=*endRS]Leave[endlink][r]
 [else]
@@ -335,7 +336,7 @@ Next..
 @advl
     "Thank you Miss, I finished the visit."
 @p
-    Nurse: "Please sign here. It's a shame, what happened to those two... I hope they can get  better soon. Their children need them.
+    Nurse: "Please sign here. It is a shame, what happened to those two... I hope they can get  better soon. Their children need them.
 @p
     "They have children?"
 @p
@@ -521,7 +522,7 @@ buried in his basement, as provided by his will. His executor
 @r
 Reverend Michael Thomas, pastor of the [font color=0xff0000]Chapel of 
 @r
-Contemplation & Church[font color=0xffffff] of Our Lord Granter of Secrets, is 
+Contemplation[font color=0xffffff] & Church of Our Lord Granter of Secrets, is 
 @r
 outraged by the lawsuit claiming those filing the lawsuit 
 @r
@@ -650,7 +651,7 @@ Clerk: "Serious crimes are handled in the county, state or federal court.
 @r
 Those records will not be kept here, you can find them at the [font color=0xff0000]Central
 @r
-Police Station[font color=0xfffff]."
+Police Station[font color=0xffffff]."
 @p
 [endif]
 @jump target=*qClack
@@ -667,7 +668,7 @@ Lord Granter of Secrets - closure due to fire...
 *qC3
 @p
 @advl
-Clerk: "Those records are filed at the [font color=0xff0000]Central Police Station."[font color=0xffffff]
+Clerk: "Those records are filed at the [font color=0xff0000]Central Police Station[font color=0xffffff]."
 @p
 @eval exp="f.Record=1"
 @jump target=*qClack
@@ -749,7 +750,7 @@ Officer: "Arrest and seizure records? Why do you want to see those?"
 @p
 Officer: "There is really not much to see."
 @p
-[link target=*searchRecords]"Please try again..."[endlink][r]
+[link target=*searchRecords]"Please, I really need to see them..."[endlink][r]
 [link target=*qOfficer]"OK..."[endlink][r]
 [s]
 [endif]
@@ -1047,7 +1048,7 @@ perished in the fire.
 activities: [font italic=true]...1966: Walter Corbitt is buried in the basement of
 @r
 his home in accordance with his wishes and with the wishes of the One Who Waits in 
-the Dark...¡±
+the Dark...
 @jump target=*BasementSearch
 
 *Desk

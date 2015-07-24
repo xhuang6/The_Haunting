@@ -536,17 +536,17 @@ Next...
 [if exp="f.HSBook==1 && f.daggerTimes!=0]
 [eval exp="tf.dagger=intrandom(0,9)"]
 [if exp="tf.dagger<5"]
-    Looking through a pile of rubbish you discover an old knife with an ornate hilt whose blade is coated with oddly-thick rust. This is Corbitt’s magic dagger! The rust is actually the dried blood of his victims.
+    Looking through a pile of rubbish you discover an old knife with an ornate hilt whose blade is coated with oddly-thick rust. This is Corbitt's magic dagger! The rust is actually the dried blood of his victims.
 @lr
 @playse storage="whiz"
     The dagger shoots out of your hand and floats in mid-air.
 [else]
-    You feel that something important is hidden in the room, but you can not seem to find anything. Maybe if you look harder…
+    You feel that something important is hidden in the room, but you can not seem to find anything. Maybe if you look harder...
 @lr
 @playse storage="whiz"
     A dagger suddenly rises from a pile of rubbish and floats in mid-air. Before you can react it slashes your hand.
 @r
-    It is an old knife with an ornate hilt whose blade is coated with oddly-thick rust. This is Corbitt’s magic dagger! The rust is actually the dried blood of his victims.
+    It is an old knife with an ornate hilt whose blade is coated with oddly-thick rust. This is Corbitt's magic dagger! The rust is actually the dried blood of his victims.
 [font color=0xff0000] HP-1[font color=0xffffff]
 [eval exp="f.HP=f.HP-1"]
 @r
@@ -578,13 +578,13 @@ Now HP is: [font color=0xff0000][emb exp="f.HP"]
 @playse storage="whiz"
 @playse storage="thud"
     Success! You knock the knife 
-from the air and it falls with a soft ‘clink’ to the 
+from the air and it falls with a soft 'clink' to the 
 floor.
 @p
 [eval exp="f.daggerTimes=0"]
 [else]
 @playse storage="whiz"
-    You fail to stop the knife’s attack as it slices your arm.
+    You fail to stop the knife's attack as it slices your arm.
 [font color=0xff0000] HP-1[font color=0xffffff]
 [eval exp="f.HP=f.HP-1"]
 @r
@@ -607,7 +607,7 @@ from the air and it lays limp in your hands.
 [eval exp="f.daggerTimes=0"]
 [else]
 @playse storage="whiz"
-    You fail to stop the knife’s attack as it slices your hands.
+    You fail to stop the knife's attack as it slices your hands.
 [font color=0xff0000] HP-1[font color=0xffffff]
 [eval exp="f.HP=f.HP-1"]
 @r
@@ -631,7 +631,7 @@ Now HP is: [font color=0xff0000][emb exp="f.HP"]
 @playse storage="whiz"
     A dagger suddenly rises from a pile of rubbish and floats in mid-air. Before you can react it slashes your hand.
 @r
-    It is an old knife with an ornate hilt whose blade is coated with oddly-thick rust. This is Corbitt’s magic dagger! The rust is actually the dried blood of his victims.
+    It is an old knife with an ornate hilt whose blade is coated with oddly-thick rust. This is Corbitt's magic dagger! The rust is actually the dried blood of his victims.
 [eval exp="f.findDagger=1"]
 [endif]
 [font color=0xff0000] HP-1[font color=0xffffff]
@@ -753,12 +753,12 @@ words are...
 [image storage=BRoom4 page=back layer=base]
 [trans method=crossfade time=1500]
 @wt
-    This is Corbitt’s hiding place. He lies motionless and seemingly dead 
+    This is Corbitt's hiding place. He lies motionless and seemingly dead 
 on a pallet in the center of the room. The floor is earthen and there is a table in the 
 southwest corner with some curled papers on it.
 *CBRoom4
 @p
-[link target=*EBody]Examin Walter Corbitt’s body[endlink][r]
+[link target=*EBody]Examin Walter Corbitt's body[endlink][r]
 [link target=*ETable]Examine the table[endlink][r]
 [link storage="endding.ks" target=*endding]Leave the house and report to Marina[endlink][r]
 [s]
@@ -782,7 +782,7 @@ southwest corner with some curled papers on it.
 @r
 [eval exp="tf.Corbitt=intrandom(10,99)"]
 [if exp="tf.Corbitt<f.rateC"]
-    Corbitt’s body starts to shake. He 
+    Corbitt's body starts to shake. He 
 suddenly shoots up from the pallet. His eyes open 
 wide, revealing a set of completely red eyes. He 
 lunges for you!
@@ -840,7 +840,7 @@ Now HP is: [font color=0xff0000][emb exp="f.HP"]
 @p
 [eval exp="tf.Defend=intrandom(0,9)"]
 [if exp="tf.Defend<5"]
-    You managed to dodge Corbitt’s attack.
+    You managed to dodge Corbitt's attack.
 [else]
     Your defense fails. Corbitt manages to attack you.
 [font color=0xff0000] HP-1[font color=0xffffff]
@@ -868,7 +868,7 @@ your escape.
 @p
 [if exp="f.HP>5"]
     You try to reach for the gem but pull 
-back when a growl emits from Corbitt’s body.
+back when a growl emits from Corbitt's body.
 @jump target=*FinalFight
 [elsif exp="f.HP<3"]
     You try to reach for the gem but a 
@@ -881,13 +881,13 @@ attempt to swallow it.
     You try to reach for the gem but a 
 sudden irritation in your forehead stops you. You 
 drop the knife and clutch your head as the irritation 
-grows. You feel yourself fading…
+grows. You feel yourself fading...
 @jump storage="endding.ks" target=*BadEndding
 [endif]
 
 
 *win
 @p
-    You manage to bring the knife down into Corbitt’s chest. He let’s out a loud, inhuman scream as he crumbles into ash. You bend down and retrieve the black gem from Corbitt’s ashes. It dissolves in your hands.
+    You manage to bring the knife down into Corbitt's chest. He let's out a loud, inhuman scream as he crumbles into ash. You bend down and retrieve the black gem from Corbitt's ashes. It dissolves in your hands.
 @lr
 @jump storage="endding.ks" target=*GoodEndding
