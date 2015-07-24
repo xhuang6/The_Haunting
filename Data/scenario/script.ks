@@ -1,4 +1,5 @@
 *scenario|The Haunting
+@clearvar
 @val
 @bg storage=black time=1000
 
@@ -6,7 +7,7 @@
 @lr
 @r
     "Hey buddy! Would you be interested in a well paid job? "
-@lr
+@r
     He asked. 
 @lr
 @r
@@ -41,7 +42,7 @@ you. He told me that you are a very skilled investigator with an interest in the
 @r
 and a $100 bonus if you can give the property a clean bill of health."
 @p
-    "It¡¯s important that I be able to rent the property out again without 
+    "It is important that I be able to rent the property out again without 
 @r
 worry of another incident happening!"
 @p
@@ -71,14 +72,14 @@ worry of another incident happening!"
 Thank you so much for your help!
 "
 @p
-    "You can go to visit the Macario family first. They are the last tenants
+    "You can go to visit the Macario family first. They were the last tenants
 @r
 	of this house. Here is the address.
 "
 @p
     "Well,Good luck!"
 @fadeoutbgm time=5000
-[eval exp="tf.HP=15"]
+
 
 
 *move
@@ -107,7 +108,11 @@ Where do you want to go?
 [link target=*TheChapelofContemplation]The Chapel of Contemplation[endlink][r]
 [endif]
 [r]
-[link storage="corbitt'sHouse.ks" target=*corbitt'sHouse]Corbitt¡¯s House[endlink][r]
+[link storage="corbitt'sHouse.ks" target=*corbitt'sHouse]Corbitt's House[endlink][r]
+[r]
+[if exp="f.VisitCH==1"]
+[link target=*Report]Report to Marina[endlink][r]
+[endif]
 [s]
 
 *TheMacarioFamily
@@ -129,7 +134,7 @@ Boston.
 @wt
 @fg layer=0 storage=Nurse t=0 l=200 time=250
 @val
-    I go to the front desk and ask to see the Mr. and Mrs.
+    You go to the front desk and ask to see the Mr. and Mrs.
 @r
 Macario. The nurse tells me their room numbers.
 @lr
@@ -139,7 +144,7 @@ Macario. The nurse tells me their room numbers.
 @lr
 [link target=*Vittorio]Visit Mr. Macario[endlink][r]
 [link target=*Gabriela]Visit Ms. Macario[endlink][r]
-[if exp="f.Vittorio"==1&&exp="f.Gabriela"==1]
+[if exp="f.Vittorio==1"&&exp="f.Gabriela==1"]
 [link target=*endRS]Leave[endlink][r]
 [else]
 [link target=*move]Leave[endlink][r]
@@ -167,7 +172,7 @@ the room.
 @lr
 [link target=*LookAroundTheRoom]Look around the room[endlink][r]
 [link target=*IntroduceYourself]Introduce yourself[endlink][r]
-[if exp="f.qV1"==1&& exp="f.qV2"==1]
+[if exp="f.qV1==1"&& exp="f.qV2==1"]
 [link target=*endVittorio]Leave[endlink][r]
 [else]
 [link target=*frontDesk]Leave[endlink][r]
@@ -176,7 +181,7 @@ the room.
 
 *LookAroundTheRoom
 @p
-You look around the room but it looks like any other patient¡¯s room in the asylum.
+You look around the room but it looks like any other patient's room in the asylum.
 @lr
 @jump target=*sickroom1
 
@@ -184,7 +189,7 @@ You look around the room but it looks like any other patient¡¯s room in the asyl
 @advl
    "Hello Mr. Macario, I am an investigator currently investigating the Corbitt house where you used to live."
 @p
-    Vittorio: *mumbles*
+    Vittorio: ...
 @p
 @val
 Next..
@@ -205,7 +210,7 @@ Next..
 @advl
    "Can you tell me about the accident you had?"
 @p
-    Vittorio: ¡­
+    Vittorio: ...
 [eval exp="f.qV1=1"]
 @jump target=*qVittorio
 
@@ -213,7 +218,7 @@ Next..
 @advl
    "What happened during the time after the accident?"
 @p
-    Vittorio: *mumbles*...burning¡­..man¡­*mumbles*
+    Vittorio: *mumbles*...burning......man...*mumbles*
 [eval exp="f.qV2=1"]
 @jump target=*qVittorio
 
@@ -243,7 +248,7 @@ little confused she has a faint smile on her face.
 @lr
 [link target=*LookAroundTheRoom2]Look around the room[endlink][r]
 [link target=*IntroduceYourself2]Introduce yourself[endlink][r]
-[if exp="f.qG1"==1&& exp="f.qG2"==1 && "f.qG3==1"]
+[if exp="f.qG1==1"&& exp="f.qG2==1" && "f.qG3==1"]
 [link target=*endGabriela]Leave[endlink][r]
 [else]
 [link target=*frontDesk]Leave[endlink][r]
@@ -254,14 +259,16 @@ little confused she has a faint smile on her face.
 @p
     You look around the room but it looks like any other
 @r
-patient¡¯s room in the asylum. A picture of her family rests on the table next to her bed.
+patient's room in the asylum. A picture of her family rests on the table next to her bed.
 
 @lr
 @jump target=*sickroom2
 
 *IntroduceYourself2
 @advl
-   "Hello Mrs. Macario, I am an investigator currently investigating the Corbitt house where you used to live."
+   "Hello Mrs. Macario, I am an investigator currently investigating the
+@r
+Corbitt house where you used to live."
 @p
     Gabriela:"I-it is nice... to meet you."
 @p
@@ -275,7 +282,7 @@ Next..
 *qGabriela
 @p
 @val
-[link target=*qG1]Can you tell me about your husband¡¯s accident?[endlink][r]
+[link target=*qG1]Can you tell me about your husband's accident?[endlink][r]
 [link target=*qG2]What happened during the time after the accident?[endlink][r]
 [link target=*qG3]What happened after your husband was committed?[endlink][r]
 [link target=*sickroom2]Leave[endlink][r]
@@ -283,13 +290,13 @@ Next..
 
 *qG1
 @advl
-   "Can you tell me about your husband¡¯s accident?"
+   "Can you tell me about your husband's accident?"
 @p
-    Gabriela:"It was because of tha-that presence.That thing¡­"
+    Gabriela:"It was because of tha-that presence.That thing..."
 @p
-	Gabriela:"t-that thing is evil¡­. evil. B-burning¡­the burning eyes."
+	Gabriela:"t-that thing is evil... evil. B-burning...the burning eyes."
 @p
-	Gabriela:"It was angry¡­ so angry. "
+	Gabriela:"It was angry... so angry. "
 [eval exp="f.qG1=1"]
 @jump target=*qGabriela
 
@@ -297,7 +304,7 @@ Next..
 @advl
    "What happened during the time after the accident?"
 @p
-    Gabriela:"I-it was angry¡­ s-so angry. Poor Vittorio¡­ my dear Vittorio... i-it¡­ it hated him s-so much."
+    Gabriela:"I-it was angry... s-so angry. Poor Vittorio... my dear Vittorio... i-it... it hated him s-so much."
 [eval exp="f.qG2=1"]
 @jump target=*qGabriela
 
@@ -305,14 +312,14 @@ Next..
 @advl
    "What happened after your husband was committed?"
 @p
-    Gabriela: "¡­th-the burning eyes¡­watching me¡­. w-watching¡­. eyes¡­"
+    Gabriela: "...th-the burning eyes...watching me... w-watching...eyes..."
 [eval exp="f.qG3=1"]
 @jump target=*qGabriela
 
 *endGabriela
 @p
 @val
-    You see Gabriela is distressed. You think it¡¯s best not to push her any further and decide to leave.
+    You see Gabriela is distressed. You think it is best not to push her any further and decide to leave.
 @lr
 @eval exp="f.Gabriela=1"
 @jump target=*frontDesk
@@ -328,7 +335,7 @@ Next..
 @advl
     "Thank you Miss, I finished the visit."
 @p
-    Nurse: "Please sign here. It¡¯s a shame, what happened to those two... I hope they can get  better soon. Their children need them.
+    Nurse: "Please sign here. It's a shame, what happened to those two... I hope they can get  better soon. Their children need them.
 @p
     "They have children?"
 @p
@@ -351,16 +358,16 @@ their aunt in Baltimore.
 @wt
 @fg layer=0 storage=FinoTito t=0 l=70 time=250
 @val
-    The two young boys, Fino and Tito, sit next to one another on a couch in their aunt and uncle¡¯s living room. Tito hangs
+    The two young boys, Fino and Tito, sit next to one another on a couch in their aunt and uncle's living room. Tito hangs
 @r
-onto his older brother¡¯s arm.
+onto his older brother's arm.
 @r
 *BaltimoreRoom
 @r
 @lr
 [link target=*LookAroundTheRoom3]Look around the room[endlink][r]
 [link target=*IntroduceYourself3]Introduce yourself[endlink][r]
-[if exp="f.qFT1"==1&& exp="f.qFT2"==1 && "f.qFT3==1"]
+[if exp="f.qFT1==1"&& exp="f.qFT2==1" && "f.qFT3==1"]
 [link target=*endFT]Leave[endlink][r]
 [else]
 [link target=*move]Leave[endlink][r]
@@ -369,7 +376,7 @@ onto his older brother¡¯s arm.
 
 *LookAroundTheRoom3
 @p
-    The room is of moderate size with a few of the boy¡¯s toys
+    The room is of moderate size with a few of the boy's toys
 @r
 scattered about. There are various pictures hanging on the
 @r
@@ -403,7 +410,7 @@ Next..
 @advl
    "Can you tell me what happened in your old house?"
 @p
-    Fino & Tito: ¡­
+    Fino & Tito: ...
 [eval exp="f.qFT1=1"]
 @jump target=*qFT
 
@@ -466,7 +473,7 @@ Librarian: "The Corbitt house? Good heavens, why do you want to know
 @r
 about that place?"
 @p
-    "I¡¯m currently investigating the old house on the request of the
+    "I am currently investigating the old house on the request of the
 @r
 landlord."
 @p
@@ -474,12 +481,12 @@ Librarian: I see. Well, the library may have some old newspapers
 @r
 containing on articles on the house and Mr. Corbitt in the back of the
 @r
-library. If you¡¯d like, I can also let you see Mr. Corbitt¡¯s obituary.
+library. If you would like, I can also let you see Mr. Corbitt's obituary.
 
 *qLibrarian
 @p
 [link target=*obituary]I would like to see the obituary.[endlink][r]
-[if exp="f.obituary"==1]
+[if exp="f.obituary==1"]
 [link target=*lawsuit]Ask librarian about result of second lawsuit[endlink][r]
 [endif]
 [link target=*SLibrary]Look around the library[endlink][r]
@@ -498,7 +505,7 @@ and pulls a book off from it. It appears the book contains
 @r
 several obituaries from 1866. She opens it and flips to the
 @r
-page containing Mr. Corbitt¡¯s obituary.
+page containing Mr. Corbitt's obituary.
 @p
 @advl
     Librarian: Here you go.
@@ -518,7 +525,7 @@ Contemplation & Church[font color=0xffffff] of Our Lord Granter of Secrets, is
 @r
 outraged by the lawsuit claiming those filing the lawsuit 
 @r
-should be ashamed for trying to deny a dead man¡¯s last wish.
+should be ashamed for trying to deny a dead man's last wish.
 @eval exp="f.RMT=1"
 @eval exp="f.obituary=1"
 @jump target=*qLibrarian
@@ -527,7 +534,7 @@ should be ashamed for trying to deny a dead man¡¯s last wish.
 
 *lawsuit
 @advl
-Librarian: Hm¡­ I am not sure. It was before my time. You 
+Librarian: Hm... I am not sure. It was before my time. You 
 can try looking for an article on it. We have quite a selection 
 of old newspapers.
 @jump target=*qLibrarian
@@ -540,16 +547,25 @@ of old newspapers.
 newspapers sorted by year of publication. You search
 @r
 through them.
-@lr
+*LBranch
+@p
 [link target=*LSearch]Search[endlink][r]
 [link target=*librarian]Speak to the librarian[endlink][r]
+[if exp="f.A1835==1"]
+[link target=*A1835]Read the Article from 1835[endlink][r]
+[endif]
+[if exp="f.A1852==1"]
+[link target=*A1852]Read the Article from 1852[endlink][r]
+[endif]
 [link target=*move]Leave[endlink][r]
+@r
 [s]
 
 *LSearch
 [eval exp="tf.LSearch=intrandom(0,9)"]
-@lr
 [if exp="tf.LSearch<3"]
+[eval exp="f.A1835=1"]
+*A1835
 @playse storage="FlipPage"
 Article from 1835
 @lr
@@ -559,31 +575,26 @@ Article from 1835
 Boston falls ill immediately after its completion. Property is
 @r
 put up for sale and purchased by Mr. Walter Corbitt, esquire...
-@p
+@jump target=*LBranch
 [elsif exp="tf.LSearch>6"]
+[eval exp="f.A1852=1"]
+*A1852
 @playse storage="FlipPage"
 Article from 1852
 @lr
 [font italic=true]
     ...The lawsuit against Mr. Corbitt was started by his
 @r
-neighbors, who petitioned to force him to leave the area ¡°in
+neighbors, who petitioned to force him to leave the area "in
 @r
 consequence of his surious [[sic] habits and inauspicious
 @r
-demeanor¡±.  Mr. Corbitt had no comment on the lawsuit¡­.¡±
-@p
+demeanor".  Mr. Corbitt had no comment on the lawsuit...
+@jump target=*LBranch
 [else]
-    No luck¡­ maybe if you look a little harder.
-@p
+    No luck... maybe if you look a little harder.
+@jump target=*LBranch
 [endif]
-@p
-Next...
-@r
-[link target=*LSearch]Search[endlink][r]
-[link target=*librarian]Speak to the librarian[endlink][r]
-[link target=*move]Leave[endlink][r]
-[s]
 
 
 *HallofRecords
@@ -682,7 +693,7 @@ Police Officer: "Can I help you?"
 @val
 [link target=*OIntroduceYourself]Introduce yourself[endlink][r]
 [link target=*qO1]Chat with the officer.[endlink][r]
-[if exp="f.Record"==1]
+[if exp="f.Record==1"]
 [link target=*qO2]Ask for record of city officers participating in arrest/seizures[endlink][r]
 [endif]
 [link target=*move]Leave[endlink][r]
@@ -694,7 +705,7 @@ Police Officer: "Can I help you?"
 @r
 house at the request of the current landlord."
 @p
-Officer: "Well, that¡¯s fine and all, but what brings you here?"
+Officer: "Well, that is fine and all, but what brings you here?"
 @jump target=*qOfficer
 
 *qO1
@@ -703,7 +714,7 @@ Officer: "Well, that¡¯s fine and all, but what brings you here?"
 @p
 Officer: "People around the neighborhood say it is haunted."
 @p
-[if exp="f.RMT"==1]
+[if exp="f.RMT==1"]
     "Do you know anything about the charges against the Chapel of
 @r
 Contemplation?"
@@ -712,15 +723,16 @@ Officer: "Why do you want to know? I thought you said you were looking
 @r
 into the Corbitt house."
 @p
-    "The reverend Michael Thomas was a pastor at the Chapel of
+    "Mr. Corbitt's executor, reverend Michael Thomas was a pastor at the
 @r
-Contemplation. I believe learning more about the Chapel I can understand
+Chapel of Contemplation. I believe learning more about the Chapel I can
 @r
-more about who Walter Corbitt was."
+understand more about who Walter Corbitt was."
 @p
 Officer: "I do not know what you mean by that, but I do not know much
 @r
 about the charges."
+[endif]
 @jump target=*qOfficer
 
 *qO2
@@ -729,7 +741,7 @@ Officer: "Arrest and seizure records? Why do you want to see those?"
 @p
     "I want to look into the charges against the Chapel from 1912."
 *searchRecords
-[if exp="f.CRecords"==1]
+[if exp="f.CRecords==1"]
 @jump target=*CRecord
 [endif]
 [eval exp="tf.ARecords=intrandom(0,9)"]
@@ -758,13 +770,25 @@ Officer: "Alright, I do not see the harm. Follow me."
 [trans method=crossfade time=1500]
 @wt
 @fg layer=0 storage=Officer t=0 l=200 time=250
+*DocumentList
 @val
 @p
+Which document do you want to read?
+@r
+[link target=*RaidDocument]Raid Document[endlink][r]
+[link target=*AutopsyReport]Autopsy Report[endlink][r]
+[link target=*ArrestRecords]Arrest Records[endlink][r]
+[link target=*PastorMTArrestRecord]Pastor Michael Thomas Arrest Record[endlink][r]
+[link target=*@jump target=*qOfficer]Leave[endlink][r]
+@r
+[s]
+
+*RaidDocument
 @playse storage="FlipPage"
 Raid Document:
 @lr
 [font italic=true]
-    ¡°RAID PROTOCOL. Location: The Chapel of
+    RAID PROTOCOL. Location: The Chapel of
 @r
 Contemplation & Church of Our Lord Granter of Secrets.
 @r
@@ -772,8 +796,11 @@ Reason: Involvement in kidnapping of children in area.
 @r
 RESULTS. Casualties: 3 policemen, 17 cult members. Cause
 @r
-of Death: Gunshot, Fire.¡±
+of Death: Gunshot, Fire.
 @p
+@jump target=*DocumentList
+
+*AutopsyReport
 @playse storage="FlipPage"
 Autopsy Report:
 @lr
@@ -781,8 +808,13 @@ Autopsy Report:
 @r
 policemen and seventeen cult member. The reports are not
 @r
-very detailed, revealing .
+very detailed, revealing very little other than the cause
+@r
+of death.
 @p
+@jump target=*DocumentList
+
+*ArrestRecords
 @playse storage="FlipPage"
 Arrest Records:
 @lr
@@ -797,7 +829,7 @@ members.
 @advl
     "What happened to other of the cult members from the arrest?
 @r
-The ones that weren¡¯t released?"
+The ones that were not released?"
 @p
 Officer: I do not know. I was not involved in that case.
 @p
@@ -805,9 +837,11 @@ Officer: I do not know. I was not involved in that case.
 @r
 at least one newspaper."
 @p
-Officer: ¡­
+Officer: ...
 @p
-@val
+@jump target=*DocumentList
+
+*PastorMTArrestRecord
 @playse storage="FlipPage"
 Pastor Michael Thomas Arrest Record:
 @lr
@@ -822,8 +856,9 @@ Second-Degree Murder of Clarence Smith, Second-Degree
 @r
 Murder of Donald Moyer, Second-Degree Murder of Ruth
 @r
-Hollis¡­ 1917: Escape from prison.
-@jump target=*qOfficer
+Hollis... 1917: Escape from prison.
+@p
+@jump target=*DocumentList
 	
 	
 *TheNeighborhood
@@ -831,7 +866,7 @@ Hollis¡­ 1917: Escape from prison.
 @fg layer=0 storage=Dooley t=0 l=200 time=250
     A vendor selling cigars and newspapers. His small shop 
 @r
-sign reads ¡°Mr. Dooley¡¯s Cigars¡±
+sign reads "Mr. Dooley's Cigars"
 @lr
 @r
 *qDooley
@@ -851,19 +886,19 @@ Mr. Dooley: "Who wants to know?"
 @p
 Mr. Dooley: "The old Corbitt house, you say?"
 @p
-[if exp="f.RMT"==1"]
-    "Yes, I¡¯m trying to find out more about the history. Right now I¡¯m
+[if exp="f.RMT==1"]
+    "Yes, I'm trying to find out more about the history. Right now I'm
 @r
 searching for the Chapel of Contemplation, I believe it may have some
 @r
-sort of connection to the history of the house. The problem is, I can not
+sort of connection to the history of the house. The problem is, I cannot
 @r
 seem to find where it is."
 @p
 Mr. Dooley: "The Chapel of Contemplation, huh. If I remember correctly it should be in that direction."
 [eval exp="f.tcoc=1"]
 [else]
-    "Yes, I¡¯m trying to find out more about the history."
+    "Yes, I'm trying to find out more about the history."
 @p
 	Mr.Dooley: "Huh..."
 [endif]
@@ -903,7 +938,7 @@ foundation.
 @val
 [link target=*ExamineSymbol]Examine the symbol[endlink][r]
 [link target=*ContinueSearching]Continue searching the rest of the Chapel remains[endlink][r]
-[if exp="f.ChapelBasement"==1]
+[if exp="f.ChapelBasement==1"]
 [link target=*ChapelBasement]Go to the Basement[endlink][r]
 [endif]
 [link target=*move]Leave[endlink][r]
@@ -944,11 +979,11 @@ are standing on is covering weakened floorboards. You fall
 @r
 ten feet into the basement.
 [font color=0xff0000] HP-1
-[quake time=3000 timemode=ms]
+[eval exp="f.TCoCFall=1"]
+[quake time=5000 timemode=ms]
 @p
 @bg storage=black time=1000
 [ws]
-@eval exp="tf.HP=tf.HP-1"
 @eval exp="f.ChapelBasement=1"
 @jump target=*ChapelBasement
 
@@ -1012,13 +1047,14 @@ perished in the fire.
 activities: [font italic=true]...1966: Walter Corbitt is buried in the basement of
 @r
 his home in accordance with his wishes and with the wishes of the One Who Waits in 
-the Dark¡­¡±
+the Dark...¡±
 @jump target=*BasementSearch
 
 *Desk
 @p
     Chained to the rotting desk is an enormous 
 volume bound in [font color=0xff0000]human skin[font color=0xffffff].
+[eval exp="f.HSBook=1"]
 @lr
 @r
 [link target=*ExamineVolume]Examine the volume[endlink][r]
@@ -1026,11 +1062,17 @@ volume bound in [font color=0xff0000]human skin[font color=0xffffff].
 [s]
 
 *ExamineVolume
-    It is a copy of the ¡°Liber Ivonis¡±, hand-written in Latin, but
+    It is a copy of the "Liber Ivonis", hand-written in Latin, but
 @r
 rotten and worm-eaten so that whole sections no longer can
 @r
 be understood.
 @jump target=*BasementSearch
 
-
+*Report
+@val
+You really want to report to Marina now?
+@lr
+[link storage="endding.ks" target=*endding]Yes[endlink][r]
+[link target=*move]No[endlink][r]
+[s]

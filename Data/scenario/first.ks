@@ -11,6 +11,7 @@
 ;           menu
 ;--------------------------------------
 *menu
+@fadeinbgm storage=UnwrittenReturn time=5000
 @clickskip enabled=false
 @startanchor
 @menul

@@ -1,4 +1,4 @@
-@title name="说明"
+@title name="About"
 @rclick enabled=false
 @clickskip enabled=false
 @position left=0 top=0 width=320 height=200 color=0xffffff opacity=255 marginl=0 margint=0 marginr=0 marginb=0
@@ -11,15 +11,19 @@
 [style align=center]
 @locate y=10
 KAGeXpress 3.0
-[font size=20]
+[font size=18]
 @locate y=40
-Final Choice
-@locate y=80
-@font size=22 shadow=false color=0
-制作：
-夏至线
+Comp 312-412
+@r
+Free and Open Source Practicum
+@r
+The project "The Haunting"
+@locate y=110
+@font size=16 shadow=false color=0
+Producer:
+Amy & Xiying
 @locate y=140
-[link hint="点击打开KFC社区" exp="System.shellExecute('http://krkr.keyfc.net/')"]krkr.keyfc.net[endlink]
+[link exp="System.shellExecute('github.com/xhuang6/The_Haunting.git')"]github.com/xhuang6/The_Haunting.git[endlink]
 @trans method=crossfade time=500
 @wt
 @wait time=10000

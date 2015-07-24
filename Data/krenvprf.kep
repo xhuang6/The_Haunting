@@ -5,4 +5,19 @@ stayontop=0
 
 [console]
 autoshowonerror=0
+left=692
+top=59
+width=515
+height=389
+exprhist=
+stayontop=0
+font=pEpPpPpPaAaAaAaAaAaAaAaAaAaAaAaAjAaBaAaAaAaAaAiGaAaAaAaAmLmOmMoFaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaAaA
+
+[script editor]
+left=8
+top=127
+width=538
+height=352
+content=
+stayontop=0
 
