@@ -48,7 +48,7 @@ However, it is not your concern.
 @val
     I wake up suddenly in my bed. 
 @lr
-    "Ow¡­... my head¡­" 
+    "Ow...... my head..." 
 @lr
     I have to remember not to drink so much.
 @lr
@@ -58,10 +58,10 @@ I pick it up.
 @p
 @advl
 @fg layer=0 storage=Marina t=0 l=200 time=250
-    "Hello, this is Marina. I¡¯m just calling to see if you solved the case yet."
+    "Hello, this is Marina. I'm just calling to see if you solved the case yet."
 @p
 @val
-    Oh, the case¡­
+    Oh, the case...
 @lr
     I tell her that everything is fine, that she will be able to rent the house without worry.
 @p
@@ -74,7 +74,7 @@ Marina: "Wonderful! Thank you so much!"
 @r
 the house. In the morning she is found stabbed to death in
 @r
-the basement by Corbitt¡¯s magic dagger. You are now being
+the basement by Corbitt's magic dagger. You are now being
 @r
 charged with murder, if you cannot prove the house is
 @r
@@ -136,7 +136,7 @@ house. Let us hope they have better luck than you did.
 @p
 @val
     You did it! Thanks to you the Corbitt house is free from Walter 
-Corbitt¡¯s grasp. Marina can rest easy renting out the house and new tenants of the 
+Corbitt's grasp. Marina can rest easy renting out the house and new tenants of the 
 house can rest easy in their new home because of you.
 @lr
 @r
