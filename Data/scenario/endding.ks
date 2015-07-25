@@ -108,10 +108,17 @@ hearing from you, Marina and her cousin report your
 @r
 disappearance to the police. They search the Corbitt house
 @r
-and, although they find evidence of you having been there, they 
-do not find your body. You are currently a missing person case for the police. 
-Meanwhile, Marina has hired a new investigator to settle the matter at the Corbitt 
-house. Let us hope they have better luck than you did.
+and, although they find evidence of you having been there,
+@r
+they do not find your body. You are currently a missing
+@r
+person case for the police.
+@lr
+    Meanwhile, Marina has hired a new investigator to settle
+@r
+the matter at the Corbitt house. Let us hope they have better
+@r
+luck than you did.
 @lr
 @r
 [font color=0xff0000][[Dead End]
