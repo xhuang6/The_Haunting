@@ -17,19 +17,25 @@
 @val
     "This house is very dangerous."
 @r
-	I think to myself as I make my way out of the house.
+    I think to myself as I make my way out of the house.
 @p
 @advl
 -The Next Day-
 @p
 @fg layer=0 storage=Marina t=0 l=200 time=250
-Marina: "Thank you for your help. I cannot give you the bonus since the problem is 
-not solved yet, but here is your payment for the work you did."
+Marina: "Thank you for your help. I cannot give you the bonus since the
+@r
+problem is not solved yet, but here is your payment for the work you did."
 @p
-@advl
-    You did not manage to get rid of Corbitt, but at least you found the 
-problem. Maybe Marina will sell the house or hire a new investigator in the future. 
-However, it is not your concern.
+@cl
+@val
+    You did not manage to get rid of Corbitt, but at least you
+@r
+found the problem. Maybe Marina will sell the house or hire a
+@r
+new investigator in the future. 
+@r
+    However, it is not your concern.
 @lr
 @r
 [[Normal End]
@@ -117,12 +123,14 @@ house. Let us hope they have better luck than you did.
 @cm
 @cl
 @backlay
-@fadeinbgm storage=InYourArms time=5000
+@fadeinbgm storage=UnwrittenReturn time=5000
 [image storage=black page=back layer=base]
 [trans method=crossfade time=1500]
 @wt
 @val
-    I stare for a moment at the ashes, then straighten myself up.
+    I stare for a moment at the ashes, then straighten myself
+@r
+up.
 @lr	
     "This is going to one interesting story to tell my friends..."
 @lr
@@ -134,10 +142,15 @@ house. Let us hope they have better luck than you did.
 @fg layer=0 storage=Marina t=0 l=200 time=250
     Marina: "Thank you so much for all your help! Here is your money."
 @p
+@cl
 @val
-    You did it! Thanks to you the Corbitt house is free from Walter 
-Corbitt's grasp. Marina can rest easy renting out the house and new tenants of the 
-house can rest easy in their new home because of you.
+    You did it! Thanks to you the Corbitt house is free from
+@r
+Walter Corbitt's grasp. Marina can rest easy renting out the
+@r
+house and new tenants of the house can rest easy in their
+@r
+new home because of you.
 @lr
 @r
 [[Good End]

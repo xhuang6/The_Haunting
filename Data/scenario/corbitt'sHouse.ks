@@ -221,7 +221,7 @@ look closer...
 [else]
     You notice the side door is secured with three bolts and
 @r
-two locks. It is strange...why fitted so many locks?
+two locks. It is strange...why is it fitted with so many locks?
 [endif]
 @jump target=*CRoom3
 
@@ -479,9 +479,13 @@ cannot quite be closed.
 
 *Basement
 @p
-    The door to the basement has a lock and three bolts, able to open 
-from the upstairs side only. Below is the main basement storage room. The stairs 
-are in poor repair, and the electricity to the basement has been turned off.
+    The door to the basement has a lock and three bolts, able
+@r
+to open from the upstairs side only. Below is the main
+@r
+basement storage room. The stairs are in poor repair, and
+@r
+the electricity to the basement has been turned off.
 @lr
 [link target=*Stairs]Go down the stairs[endlink][r]
 [link target=*GFloor]Ground Floor[endlink][r]
@@ -489,11 +493,12 @@ are in poor repair, and the electricity to the basement has been turned off.
 
 *Stairs
 [eval exp="tf.Stairs=intrandom(0,9)"]
-[if exp="tf.Stairs<3]
+[if exp="tf.Stairs<3"]
 @playse storage=Collapse
 @p
-    As you make your way down the stairs, you 
-accidentally trip and go tumbling down the stairs.[font color=0xff0000] HP-1[font color=0xffffff]
+    As you make your way down the stairs, you accidentally
+@r
+trip and go tumbling down the stairs.[font color=0xff0000] HP-1[font color=0xffffff]
 [eval exp="f.HP=f.HP-1"]
 @r
 Now HP is: [font color=0xff0000][emb exp="f.HP"]
@@ -508,10 +513,17 @@ Now HP is: [font color=0xff0000][emb exp="f.HP"]
 [image storage=BRoom1 page=back layer=base]
 [trans method=crossfade time=1500]
 @wt
-    A smallish room, scattered tools, pipe, lumber, nails, screws, and so 
-forth. The side walls are of brick. The wall opposite the stairs is of wood.
+    A smallish room, scattered tools, pipe, lumber, nails,
+@r
+screws, and so forth. The side walls are of brick. The wall
+@r
+opposite the stairs is of wood.
 @lr
 *BFloor
+@backlay
+[image storage=BRoom1 page=back layer=base]
+[trans method=crossfade time=1500]
+@wt
 @r
 [if exp="f.findDagger==1 && f.daggerTimes!=0"]
 @p
@@ -519,7 +531,8 @@ forth. The side walls are of brick. The wall opposite the stairs is of wood.
     The dagger shoots out of your hand and floats in mid-air.
 @jump target=*DaggerFight
 [endif]
-Next...
+@p
+Next...[r]
 [link target=*ERubbish]Examine a pile of rubbish[endlink][r]
 [link target=*EWoodWall]Examine the wall made of wood[endlink][r]
 [link target=*BRoom2]Go to Room2 Under the stairs[endlink][r]
@@ -533,32 +546,50 @@ Next...
 
 *ERubbish
 @p
-[if exp="f.HSBook==1 && f.daggerTimes!=0]
+[if exp="f.HSBook==1 && f.daggerTimes!=0"]
 [eval exp="tf.dagger=intrandom(0,9)"]
 [if exp="tf.dagger<5"]
-    Looking through a pile of rubbish you discover an old knife with an ornate hilt whose blade is coated with oddly-thick rust. This is Corbitt's magic dagger! The rust is actually the dried blood of his victims.
+    Looking through a pile of rubbish you discover an old knife
+@r
+with an ornate hilt whose blade is coated with oddly-thick
+@r
+rust. This is Corbitt's magic dagger! The rust is actually the
+@r
+dried blood of his victims.
 @lr
 @playse storage="whiz"
     The dagger shoots out of your hand and floats in mid-air.
 [else]
-    You feel that something important is hidden in the room, but you can not seem to find anything. Maybe if you look harder...
+    You feel that something important is hidden in the room,
+@r
+but you can not seem to find anything. Maybe if you look
+@r
+harder...
 @lr
 @playse storage="whiz"
-    A dagger suddenly rises from a pile of rubbish and floats in mid-air. Before you can react it slashes your hand.
+    A dagger suddenly rises from a pile of rubbish and floats in
 @r
-    It is an old knife with an ornate hilt whose blade is coated with oddly-thick rust. This is Corbitt's magic dagger! The rust is actually the dried blood of his victims.
+mid-air. Before you can react it slashes your hand.
+@r
+    It is an old knife with an ornate hilt whose blade is coated
+@r
+with oddly-thick rust. This is Corbitt's magic dagger! The rust
+@r
+is actually the dried blood of his victims.
 [font color=0xff0000] HP-1[font color=0xffffff]
 [eval exp="f.HP=f.HP-1"]
 @r
-Now HP is: [font color=0xff0000][emb exp="f.HP"]
+Now HP is: [font color=0xff0000][emb exp="f.HP"][font color=0xffffff]
 [endif]
 [eval exp="f.daggerTimes=f.daggerTimes-1"]
 [eval exp="f.findDagger=1"]
 *DaggerFight
+@lr
 @r
 [link target=*Parry]Parry knife with a garbage can lid[endlink][r]
 [link target=*Grab]Grab the knife[endlink][r]
-[link target=*BRoom2]Go to the Small Room Under the stairs[endlink][r]
+[link target=*EWoodWall]Examine the wall made of wood[endlink][r]
+[link target=*BRoom2]Go to Room2 Under the stairs[endlink][r]
 [link target=*GFloor]Back to Ground Floor[endlink][r]
 [s]
 
@@ -567,7 +598,9 @@ Now HP is: [font color=0xff0000][emb exp="f.HP"]
 @p
 @jump target=*BFloor
 [else]
-    You feel that something important is hidden in the room, but you can not seem to find anything.
+    You feel that something important is hidden in the room,
+@r
+but you can not seem to find anything.
 @jump target=*BFloor
 [endif]
 
@@ -577,14 +610,16 @@ Now HP is: [font color=0xff0000][emb exp="f.HP"]
 [if exp="tf.parry<3"]
 @playse storage="whiz"
 @playse storage="thud"
-    Success! You knock the knife 
-from the air and it falls with a soft 'clink' to the 
+    Success! You knock the knife from the air and it falls with a
+@r
+soft 'clink' to the 
 floor.
 @p
-[eval exp="f.daggerTimes=0"]
+[eval exp="f.daggerTimes=f.daggerTimes-1"]
 [else]
 @playse storage="whiz"
     You fail to stop the knife's attack as it slices your arm.
+@r
 [font color=0xff0000] HP-1[font color=0xffffff]
 [eval exp="f.HP=f.HP-1"]
 @r
@@ -601,13 +636,15 @@ Now HP is: [font color=0xff0000][emb exp="f.HP"]
 [eval exp="tf.grab=intrandom(0,9)"]
 [if exp="tf.parry<3"]
 @playse storage="whiz"
-    Success! You wretch the knife 
-from the air and it lays limp in your hands.
+    Success! You wretch the knife from the air and it lays limp
+@r
+in your hands.
 @p
 [eval exp="f.daggerTimes=0"]
 [else]
 @playse storage="whiz"
     You fail to stop the knife's attack as it slices your hands.
+@r
 [font color=0xff0000] HP-1[font color=0xffffff]
 [eval exp="f.HP=f.HP-1"]
 @r
@@ -622,22 +659,31 @@ Now HP is: [font color=0xff0000][emb exp="f.HP"]
 *EWoodWall
 @p
     The wall is made of closely fitted boards.
-[if exp="f.HSBook==1]
+@lr
+[if exp="f.HSBook==1"]
 [if exp="f.daggerTimes!=0"]
 [if exp="f.findDagger==1"]
 @playse storage="whiz"
-    The dagger suddenly rises from a pile of rubbish and floats in mid-air. Before you can react it slashes your hand.
+    The dagger suddenly rises from a pile of rubbish and floats
+@r
+in mid-air. Before you can react it slashes your hand.
 [else]
 @playse storage="whiz"
-    A dagger suddenly rises from a pile of rubbish and floats in mid-air. Before you can react it slashes your hand.
+    A dagger suddenly rises from a pile of rubbish and floats
 @r
-    It is an old knife with an ornate hilt whose blade is coated with oddly-thick rust. This is Corbitt's magic dagger! The rust is actually the dried blood of his victims.
+in mid-air. Before you can react it slashes your hand.
+@r
+    It is an old knife with an ornate hilt whose blade is coated
+@r
+with oddly-thick rust. This is Corbitt's magic dagger! The rust
+@r
+is actually the dried blood of his victims.
 [eval exp="f.findDagger=1"]
 [endif]
 [font color=0xff0000] HP-1[font color=0xffffff]
 [eval exp="f.HP=f.HP-1"]
 @r
-Now HP is: [font color=0xff0000][emb exp="f.HP"]
+Now HP is: [font color=0xff0000][emb exp="f.HP"][font color=0xffffff]
 [if exp="f.HP==0"]
 @jump storage="endding.ks" target=*DeadEndding
 [endif]
@@ -656,8 +702,9 @@ Now HP is: [font color=0xff0000][emb exp="f.HP"]
 *RemoveWall
 [if exp="f.crowbar==1"]
 @p
-    After the boards are removed, a crawl 
-space is visible between two wooden walls.
+    After the boards are removed, a crawl space is visible
+@r
+between two wooden walls.
 [eval exp="f.BRoom3=1"]
 @jump target=*BRoom3
 [else]
@@ -673,9 +720,11 @@ space is visible between two wooden walls.
 [image storage=BRoom2 page=back layer=base]
 [trans method=crossfade time=1500]
 @wt
-    The room under the stairs, the walls are made of wood. An empty 
-storage bin, once intended for coal. The door to the outside coal chute has been 
-nailed shut firmly.
+    The room under the stairs, the walls are made of wood. An
+@r
+empty storage bin, once intended for coal. The door to the
+@r
+outside coal chute has been nailed shut firmly.
 @lr
 *CBRoom2
 @r
@@ -715,7 +764,7 @@ nailed shut firmly.
 the rats nip at your feet.[font color=0xff0000] HP-1[font color=0xffffff]
 [eval exp="f.HP=f.HP-1"]
 @r
-Now HP is: [font color=0xff0000][emb exp="f.HP"]
+Now HP is: [font color=0xff0000][emb exp="f.HP"][font color=0xffffff]
 [if exp="f.HP==0"]
 @jump storage="endding.ks" target=*DeadEndding
 [endif]
@@ -735,15 +784,17 @@ Now HP is: [font color=0xff0000][emb exp="f.HP"]
 @p
 [eval exp="tf.CSearch=intrandom(0,9)"]
 [if exp="tf.CSearch<5"]
-    Carved into the inner wall are irregular words 
-"Chapel of Contemplation". You break the wall revealing a 
-massive, hidden room.
+    Carved into the inner wall are irregular words "Chapel of
+@r
+Contemplation". You break the wall revealing a massive,
+@r
+hidden room.
 [eval exp="f.BRoom4=1"]
 @jump target=*Crawlspace
 [else]
-    Carved into the inner wall are irregular, 
-scratchy words. Perhaps a closer look will reveal what the 
-words are...
+    Carved into the inner wall are irregular, scratchy words.
+@r
+Perhaps a closer look will reveal what the words are...
 @jump target=*Crawlspace
 
 *BRoom4
@@ -753,9 +804,13 @@ words are...
 [image storage=BRoom4 page=back layer=base]
 [trans method=crossfade time=1500]
 @wt
-    This is Corbitt's hiding place. He lies motionless and seemingly dead 
-on a pallet in the center of the room. The floor is earthen and there is a table in the 
-southwest corner with some curled papers on it.
+    This is Corbitt's hiding place. He lies motionless and
+@r
+seemingly dead on a pallet in the center of the room. The
+@r
+floor is earthen and there is a table in the southwest corner
+@r
+with some curled papers on it.
 *CBRoom4
 @p
 [link target=*EBody]Examin Walter Corbitt's body[endlink][r]
@@ -765,63 +820,87 @@ southwest corner with some curled papers on it.
 
 *EBody
 @p
-    Corbitt is drawn, wooden-looking, a wizened figure of some six feet, skinny and naked, with ghastly flaring, saucer-like eyes and a nose like a knife blade. There is a black gem fastened on a chain From him comes a sharp, sweet, churning scent, like rotten corn. He does not breath at all.
+    Corbitt is drawn, wooden-looking, a wizened figure of
+@r
+some six feet, skinny and naked, with ghastly flaring,
+@r
+saucer-like eyes and a nose like a knife blade. There is a
+@r
+black gem fastened on a chain From him comes a sharp,
+@r
+sweet, churning scent, like rotten corn. He does not breath
+@r
+at all.
 @lr
 [eval exp="tf.EBRoom4=intrandom(0,99)"]
 [if exp="tf.EBRoom4<f.rateC"]
 [eval exp="tf.CDescription=intrandom(0,3)"]
 [if exp="tf.CDescription==0"]
+@playse storage="growl"
     You hear an animal-like growl coming from Corbitt.
 [elsif exp="tf.CDescription==1"]
+@playse storage="screech"
     A loud screech comes from Corbitt.
 [elsif exp="tf.CDescription==2"]
-    A loud cackle, that reverberates around the room, comes from Corbitt.
+@playse storage="cackle"
+    A loud cackle, that reverberates around the room, comes
+@r
+from Corbitt.
 [else]
+@playse storage="mumbling"
     You hear a low mumbling coming from Corbitt. Although you cannot understand it, you feel he is mocking you.
 [endif]
 @r
 [eval exp="tf.Corbitt=intrandom(10,99)"]
 [if exp="tf.Corbitt<f.rateC"]
-    Corbitt's body starts to shake. He 
-suddenly shoots up from the pallet. His eyes open 
-wide, revealing a set of completely red eyes. He 
-lunges for you!
-@lr
+    Corbitt's body starts to shake. He suddenly shoots up from
+@r
+the pallet. His eyes open wide, revealing a set of completely
+@r
+red eyes. He lunges for you!
+@fg layer=0 storage=Corbitt t=0 l=200 time=250
 @jump target=*FinalFight
 [endif]
 [endif]
-[eval exp="f.rateC=f.rate+5C"]
+[eval exp="f.rateC=f.rateC+5"]
 @jump target=*CBRoom4
 
 
 *ETable
 @p
-    The curled papers crumble to dust when you touch them. The remaining paper seems to be a horoscope.
-@lr
+    The curled papers crumble to dust when you touch them.
+@r
+The remaining paper seems to be a horoscope.
 @jump target=*CBRoom4
 
 
 *FinalFight
 @p
-Round [emb exp="6-f.Ctimes"][r]
+[eval exp="f.round=6-f.CTimes"]
+Round [emb exp="f.round"][r]
 [link target=*Attack]Attack[endlink][r]
 [link target=*Defend]Defend[endlink][r]
 [link target=*RunAway]Run Away[endlink][r]
 [link target=*gem]Try to take the black gem[endlink][r]
+[s]
 
 *Attack
 @p
 [eval exp="tf.Attack=intrandom(0,9)"]
 [if exp="f.daggerTimes==0 && tf.Attack<5"]
+@playse storage="thud"
     You stab Corbitt with his knife!A chunk of his body falls off.
 [eval exp="f.CTimes=0"]
 [elsif exp="tf.Attack<3"]
+@playse storage="thud"
     You manage to stab Corbitt. A chunk of his 
 body falls off.
 [eval exp="f.CTimes=0"]
 [else]
-    You try to stab Corbitt, but are stopped by an 
-invisible force.[font color=0xff0000] HP-1[font color=0xffffff]
+@playse storage="cackle"
+    You try to stab Corbitt, but are stopped by an invisible
+@r
+force.[font color=0xff0000] HP-1[font color=0xffffff]
 [eval exp="f.HP=f.HP-1"]
 @r
 Now HP is: [font color=0xff0000][emb exp="f.HP"]
@@ -840,8 +919,10 @@ Now HP is: [font color=0xff0000][emb exp="f.HP"]
 @p
 [eval exp="tf.Defend=intrandom(0,9)"]
 [if exp="tf.Defend<5"]
+@playse storage="thud"
     You managed to dodge Corbitt's attack.
 [else]
+@playse storage="cackle"
     Your defense fails. Corbitt manages to attack you.
 [font color=0xff0000] HP-1[font color=0xffffff]
 [eval exp="f.HP=f.HP-1"]
@@ -860,6 +941,7 @@ Now HP is: [font color=0xff0000][emb exp="f.HP"]
 [if exp="tf.RunAway<5"]
 @jump storage="endding.ks" target=*NormalEnding
 [else]
+@playse storage="cackle"
     You try to make a run for it, but Corbitt blocks 
 your escape.
 @jump target=*FinalFight
@@ -867,27 +949,41 @@ your escape.
 *gem
 @p
 [if exp="f.HP>5"]
-    You try to reach for the gem but pull 
-back when a growl emits from Corbitt's body.
+    You try to reach for the gem but pull back when a growl
+@r
+emits from Corbitt's body.
 @jump target=*FinalFight
 [elsif exp="f.HP<3"]
-    You try to reach for the gem but a 
-sudden irritation in your forehead stops you. You feel 
-you mind becoming clouded. You take the knife in 
-your hand and plunge it down your throat in an 
-attempt to swallow it.
+@playse storage="cackle"
+    You try to reach for the gem but a sudden irritation in your
+@r
+forehead stops you. You feel you mind becoming clouded.
+@r
+You take the knife in your hand and plunge it down your
+@r
+throat in an attempt to swallow it.
+@p
 @jump storage="endding.ks" target=*DeadEndding
 [else]
-    You try to reach for the gem but a 
-sudden irritation in your forehead stops you. You 
-drop the knife and clutch your head as the irritation 
-grows. You feel yourself fading...
+@playse storage="cackle"
+    You try to reach for the gem but a sudden irritation in your
+@r
+forehead stops you. You drop the knife and clutch your head
+@r
+as the irritation grows. You feel yourself fading...
+@p
 @jump storage="endding.ks" target=*BadEndding
 [endif]
 
 
 *win
 @p
-    You manage to bring the knife down into Corbitt's chest. He let's out a loud, inhuman scream as he crumbles into ash. You bend down and retrieve the black gem from Corbitt's ashes. It dissolves in your hands.
+    You manage to bring the knife down into Corbitt's chest.
+@r
+He let's out a loud, inhuman scream as he crumbles into ash.
+@r
+You bend down and retrieve the black gem from Corbitt's
+@r
+ashes. It dissolves in your hands.
 @lr
 @jump storage="endding.ks" target=*GoodEndding
