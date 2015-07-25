@@ -443,11 +443,18 @@ windowpane.
 @playse storage=thud
 @playse storage=Collapse
 @p
+<<<<<<< HEAD
     You approach the window. Suddenly you hear the bed
 @r
 moving behind you. Before you can react the bed hits you
 @r
 and you go flying through the window.
+=======
+    You approach the window. Suddenly 
+you hear the bed moving behind you. Before you 
+can react the bed hits you and you go flying through 
+the window.
+>>>>>>> 4dd0df25b8706990233ab085ede2c534d148a8b3
 @p
 @jump storage="endding.ks" target=*DeadEndding
 

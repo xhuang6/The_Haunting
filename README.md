@@ -12,3 +12,6 @@ July 21 2015
 update all of the parts except "The Corbbit's House"
 
 
+July 24 2015
+-------------------------------------------------
+Game complete.
