@@ -443,18 +443,11 @@ windowpane.
 @playse storage=thud
 @playse storage=Collapse
 @p
-<<<<<<< HEAD
     You approach the window. Suddenly you hear the bed
 @r
 moving behind you. Before you can react the bed hits you
 @r
 and you go flying through the window.
-=======
-    You approach the window. Suddenly 
-you hear the bed moving behind you. Before you 
-can react the bed hits you and you go flying through 
-the window.
->>>>>>> 4dd0df25b8706990233ab085ede2c534d148a8b3
 @p
 @jump storage="endding.ks" target=*DeadEndding
 
@@ -623,8 +616,7 @@ but you can not seem to find anything.
 @playse storage="thud"
     Success! You knock the knife from the air and it falls with a
 @r
-soft 'clink' to the 
-floor.
+soft 'clink' to the floor.
 @p
 [eval exp="f.daggerTimes=f.daggerTimes-1"]
 [else]
@@ -904,8 +896,7 @@ Round [emb exp="f.round"][r]
 [eval exp="f.CTimes=0"]
 [elsif exp="tf.Attack<3"]
 @playse storage="thud"
-    You manage to stab Corbitt. A chunk of his 
-body falls off.
+    You manage to stab Corbitt. A chunk of his body falls off!
 [eval exp="f.CTimes=0"]
 [else]
 @playse storage="cackle"
@@ -989,6 +980,7 @@ as the irritation grows. You feel yourself fading...
 
 *win
 @p
+@playse storage="screech"
     You manage to bring the knife down into Corbitt's chest.
 @r
 He let's out a loud, inhuman scream as he crumbles into ash.
