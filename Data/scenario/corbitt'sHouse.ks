@@ -837,7 +837,7 @@ some six feet, skinny and naked, with ghastly flaring,
 @r
 saucer-like eyes and a nose like a knife blade. There is a
 @r
-black gem fastened on a chain From him comes a sharp,
+black gem fastened on a chain. From him comes a sharp,
 @r
 sweet, churning scent, like rotten corn. He does not breath
 @r
