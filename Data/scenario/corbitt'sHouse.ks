@@ -444,7 +444,8 @@ emitting a loud 'thud' as it strikes the opposite wall.
     You approach the window. Suddenly 
 you hear the bed moving behind you. Before you 
 can react the bed hits you and you go flying through 
-the window. 
+the window.
+@p
 @jump storage="endding.ks" target=*DeadEndding
 
 
@@ -813,7 +814,7 @@ floor is earthen and there is a table in the southwest corner
 with some curled papers on it.
 *CBRoom4
 @p
-[link target=*EBody]Examin Walter Corbitt's body[endlink][r]
+[link target=*EBody]Examine Walter Corbitt's body[endlink][r]
 [link target=*ETable]Examine the table[endlink][r]
 [link storage="endding.ks" target=*endding]Leave the house and report to Marina[endlink][r]
 [s]
